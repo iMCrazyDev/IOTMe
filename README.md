@@ -1,10 +1,11 @@
-![https://img.shields.io/badge/Status-WIP-red](https://img.shields.io/badge/Status-WIP-red) ![https://img.shields.io/badge/Realese-No-red](https://img.shields.io/badge/Realese-Yes-red)
+![https://img.shields.io/badge/Status-WIP-red](https://img.shields.io/badge/Status-WIP-red) ![https://img.shields.io/badge/Realese-No-red](https://img.shields.io/badge/Realese-No-red)
 
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
 # IOTMe
   Http wrapper for interaction in admin-user-module system     
-  Kotlin [203-1.4.21] +
+  Kotlin [203-1.4.21] +    
+  [Построено по примеру](https://play.kotlinlang.org/hands-on/Creating%20HTTP%20APIs%20with%20Ktor/01_introduction)
 ____
 #### Open server: Нет.
 #### Список задач:
@@ -26,11 +27,17 @@ ____
  - Быстро
 ____
 # Использование 
+  - Понять иерархию "module"-"user"-"user admin" системы    
+` [Server] + Module (ex. датчик) -> Создание Module[system admin] (задающий конфигурацию тех или иных модулей, принимает debug информацию, ex, вы, raspberry pi(arduino)) -> Создание Module[User] (принимает и обрабатывает информацию с модуля, ex, чат-бот)  
+`
   - Клонировать репозиторий
-  - Отредактировать [application.conf](https://ktor.io/docs/a-ktor-application.html)
+  - Открыть в IntelliJ IDEA (убедиться, что версия Kotlin соответствует минимально требуемой)
+  - Отредактировать resources \ [application.conf](https://ktor.io/docs/a-ktor-application.html)
       - Задать порт
       - Задать ip (для теста оставить localhost)
-  - Радоваться жизни
+  - Запустить проект(точка входа main -> ..\src\main\kotlin\com\jetbrains\handson\httpapi\Application.kt)
+  - Создать необходимых юзеров/админов по иерархии и пользоваться  
+  - Радоваться жизни:)
   
 ____
 # Описание API 
